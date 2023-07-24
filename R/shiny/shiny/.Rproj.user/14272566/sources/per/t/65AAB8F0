@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1564457423626.000,
+    "dirty" : false,
+    "encoding" : "EUC-KR",
+    "folds" : "",
+    "hash" : "3516657941",
+    "id" : "65AAB8F0",
+    "lastKnownWriteTime" : 1553791832,
+    "last_content_update" : 1553791832,
+    "path" : "~/works/Workspaces/R/shiny/shiny_r_go/app.R",
+    "project_path" : "../shiny_r_go/app.R",
+    "properties" : {
+        "cursorPosition" : "13,0",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

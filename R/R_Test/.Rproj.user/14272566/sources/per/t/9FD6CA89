@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1564440721257.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "406179495",
+    "id" : "9FD6CA89",
+    "lastKnownWriteTime" : 1564442936,
+    "last_content_update" : 1564442936330,
+    "path" : "~/works/Workspaces/R/R_Test/20190730.R",
+    "project_path" : "20190730.R",
+    "properties" : {
+        "cursorPosition" : "29,16",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

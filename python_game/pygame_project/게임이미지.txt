@@ -1,0 +1,7 @@
+[프로젝트 게임 이미지]  
+1. 배경 https://www.freepik.com/free-vector/arcade-game-world-pixel-scene_4815143.htm#query=arcade-game-world-pixel-scene&position=8   
+2. 스테이지 https://www.freepik.com/free-vector/urban-city-day-time-background_4708004.htm#page=5&query=brick&position=47   
+3. 캐릭터 https://opengameart.org/content/custom-sprites-for-the-crystal-palace-0   
+4. 무기 머리 부분 https://www.freepik.com/free-vector/weapon-icons-set_3924829.htm#page=1&query=arrow%20weapon&position=7   
+5. 무기 몸체 부분 (와이어) https://www.freepik.com/free-vector/barbed-wire-realistic-illustration-separate-elements-barbed-wire_3586280.htm#page=1&query=wire&position=37   
+6. 공 https://www.freepik.com/free-vector/colored-bubbles_808278.htm#page=2&query=bubble&position=18

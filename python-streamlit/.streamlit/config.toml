@@ -1,0 +1,8 @@
+# config.toml 파일 (https://docs.streamlit.io/library/advanced-features/configuration)
+# streamlit config show
+# streamlit run your_script.py --server.port 80
+
+[server]
+port=8888
+
+[theem]

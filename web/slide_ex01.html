@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="manifest" href="/slide_ex01.webmanifest"> -->
+    <title>Document</title>
+
+    <style type="text/css">
+    * {
+    /*     box-sizing: border-box; */
+    }
+    body {
+        background: #3206FF;
+        background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
+        min-height: 100vh;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .slider {
+        display: block;
+        position: relative;
+        width: 100%;
+        max-width: 900px;
+        margin: 10px;
+        background-color: white;
+        overflow: hidden;
+    }
+
+    .slider__slides {
+    width: 100%;
+    padding-top: 66%;
+    }
+
+    .slider__slide {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 50px;
+        font-weight: bold;   
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: lemonchiffon;
+        transition: 1s;
+        opacity: 0;
+    }
+
+    .slider__slide.active {
+        opacity: 1;
+    }
+
+    .slider__slide img {
+    width: 100%;
+    }
+
+    .slider__nav-button {
+        position: absolute;
+        height: 70px;
+        width: 70px;
+        background-color: #333;
+        opacity: .8;
+        cursor: pointer;
+    }
+
+    #nav-button--prev {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    #nav-button--next {
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+
+    #nav-button--prev::after,
+    #nav-button--next::after {
+        content: "";
+        position: absolute;
+        border: solid white;
+        border-width: 0 4px 4px 0;
+        display: inline-block;
+        padding: 3px;
+        width: 40%;
+        height: 40%;
+    }
+
+    #nav-button--next::after{
+        top: 50%;
+        right: 50%;
+        transform: translate(25%, -50%) rotate(-45deg);
+    }
+
+    #nav-button--prev::after {
+        top: 50%;
+        right: 50%;
+        transform: translate(75%, -50%) rotate(135deg);
+    }
+
+    .slider__nav {
+        position: absolute;
+        bottom: 3%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    .slider__navlink {
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        border: 1px #fff solid;
+        background-color: #333;
+        opacity: 1;
+        margin: 0 10px 0 10px;
+        cursor: pointer;
+    }
+
+    .slider__navlink.active {
+        background-color: #fff;
+        border: 1px #333 solid;
+    }
+
+
+    @media screen and (max-width: 640px) {
+    .slider__nav-button {
+        height: 40px;
+        width: 40px;
+    }
+    .slider__navlink {
+        height: 12px;
+        width: 12px;
+    }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="slider">
+          <div class="slider__slides">
+            <div class="slider__slide active">
+               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Shakuzoji_Kuginuki_Jizo-3586.jpg/800px-Shakuzoji_Kuginuki_Jizo-3586.jpg" alt="A rooftop in Japan" />
+            </div>
+            <div class="slider__slide">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Stirling_Castle_Main_Gate.jpg/800px-Stirling_Castle_Main_Gate.jpg" alt="A castle in Scotland" />
+            </div>
+            <div class="slider__slide">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Xiaoqingshan_Farm_Product_Market%2C_Puding_County%2C_Guizhou%2C_China2.jpg/800px-Xiaoqingshan_Farm_Product_Market%2C_Puding_County%2C_Guizhou%2C_China2.jpg" alt="A street market in China" />
+            </div>
+            <div class="slider__slide">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Patung_Buddha_Tidur_Trowulan.jpg/800px-Patung_Buddha_Tidur_Trowulan.jpg" alt="A statue of the Buddha in Thailand" />
+            </div>
+          </div>
+          <div id="nav-button--prev" class="slider__nav-button"></div>
+          <div id="nav-button--next" class="slider__nav-button"></div>
+          <div class="slider__nav">
+            <div class="slider__navlink active"></div>
+            <div class="slider__navlink"></div>
+            <div class="slider__navlink"></div>
+            <div class="slider__navlink"></div>
+          </div>
+        </div>
+    </div>
+</body>
+<script>
+    let slides = document.getElementsByClassName("slider__slide");
+    let navlinks = document.getElementsByClassName("slider__navlink");
+    let currentSlide = 0;
+
+    document.getElementById("nav-button--next").addEventListener("click", () => {
+        changeSlide(currentSlide + 1)
+    });
+    document.getElementById("nav-button--prev").addEventListener("click", () => {
+        changeSlide(currentSlide - 1)
+    });
+
+    function changeSlide(moveTo) {
+        if (moveTo >= slides.length) {moveTo = 0;}
+        if (moveTo < 0) {moveTo = slides.length - 1;}
+        
+        slides[currentSlide].classList.toggle("active");
+        navlinks[currentSlide].classList.toggle("active");
+        slides[moveTo].classList.toggle("active");
+        navlinks[moveTo].classList.toggle("active");
+        
+        currentSlide = moveTo;
+    }
+
+    document.querySelectorAll('.slider__navlink').forEach((bullet, bulletIndex) => {
+        bullet.addEventListener('click', () => {
+            if (currentSlide !== bulletIndex) {
+                changeSlide(bulletIndex);
+            }
+        })
+    })
+    </script>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: "맑은 고딕";
+        }
+    
+        table,
+        td,
+        th {
+            border: 1px solid #000;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    
+        /*사용자 정의 스타일 */
+        .dragRow {
+            background-color: #fee;
+        }
+    
+        td.dragHandle {}
+    
+        td.showDragHandle {
+            background-image: url(images/updown2.gif);
+            background-repeat: no-repeat;
+            background-position: center left;
+            cursor: move;
+        }
+    
+        table td {
+            padding: 5px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/TableDnD/0.9.1/jquery.tablednd.js"
+        integrity="sha256-d3rtug+Hg1GZPB7Y/yTcRixO/wlI78+2m08tosoRn7A=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#mytable").tableDnD({ 
+                onDragClass: "dragRow", 
+                onDrop: function (table, row) { 
+                    ordered_items = $.tableDnD.serialize('id'); 
+                } 
+            });
+        })
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" id="mytable" style="width: 500px;">    <tr>        <td>1</td>
+            <td>첫번째</td>    
+        </tr>    <tr>        <td>2</td>
+            <td>두번째</td>    
+        </tr>    <tr>        <td>3</td>
+            <td>세번째</td>    
+        </tr>    <tr>        <td>4</td>
+            <td>네번째</td>    
+        </tr>    <tr>        <td>5</td>
+            <td>다섯번째</td>    
+        </tr>
+    </table>
+    
+</body>
+</html>

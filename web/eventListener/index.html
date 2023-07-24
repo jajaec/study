@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="default.css">
+</head>
+<body>
+    <div class="outer">
+        바깥, 일회용 & 다회용
+        <div class="middle" target="_blank">
+            중간, 캡처 & 비 캡처
+            <a class="inner1" href="https://www.mozilla.org" target="_blank">
+                내부 1, 패시브 & (허용되지 않은) preventDefault
+            </a>
+            <a class="inner2" href="https://developer.mozilla.org/" target="_blank">
+                내부 2, 비 패시브 & preventDefault (새 페이지가 열리지 않음)
+            </a>
+        </div>
+    </div>
+
+    <script src="default.js"></script>
+</body>
+</html>

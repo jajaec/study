@@ -148,7 +148,7 @@ async function prepareOneFish() {
 
 function test07() {
     alert("test");
-    //console.log(util.add([1, 2, 3]));
+    console.log(util.add([1, 2, 3]));
 
     // console.log("Start!");
     // prepareOneFish().then(console.log);
